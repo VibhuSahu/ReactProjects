@@ -143,7 +143,6 @@ package-lock.json
 
 ##### 5. Source Code
 
-Paste Code in the `` file.
 
 Paste Code in the `./index.html` file.
 
