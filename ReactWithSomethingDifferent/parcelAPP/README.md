@@ -156,13 +156,13 @@ Paste Code in the `./index.html` file.
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="./src/index.tsx"></script>
+  <script type="module" src="./src/index.jsx"></script>
 
 </body>
 </html>
 ```
 
-Paste Code in the ./index.tsx file.
+Paste Code in the ./index.jsx file.
 
 ```javascript
 import React from "react";
@@ -181,7 +181,7 @@ root.render(
 );
 ```
 
-Paste Code in the ./src/App.tsx file.
+Paste Code in the ./src/App.jsx file.
 
 ```javascript
 import React from "react";
@@ -311,7 +311,70 @@ package-lock.json
 
 ##### 5. Source Code
 
-Paste All code in the files as it is.
+> **Paste All code in the files as it is.**
+
+Paste this in `tsconfig.json` file. 
+
+```bash
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
+```
+
+Paste this in `./index.html` file.
+
+```bash
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Parcel + React + TypeScript</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="./src/index.tsx"></script>
+</body>
+</html>
+```
+
+Paste this in `./src/index.tsx` file.
+```bash
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(<App />);
+```
+
+
+Paste this in `./src/App.tsx` file.
+```bash
+import React from "react";
+
+const App: React.FC = () => {
+  return (
+    <div>
+      <h1>🚀 Parcel + TypeScript + React</h1>
+    </div>
+  );
+};
+
+export default App;
+
+```
+
 
 
 
@@ -374,6 +437,56 @@ Add tailwind code in `./src/index.css` file.
 ---
 
 > **This is used for inline CSS**
+
+
+##### 1. Install 
+
+This is for installing library
+
+```bash
+npm install bootstrap
+```
+
+##### 2. Importe Library
+
+This is for Importing library's in `index.jsx` or `main.jsx` file. Paste this in your `index.jsx` or `main.jsx` file
+
+```javascript
+import "bootstrap/dist/css/bootstrap.min.css";  // Bootstrap styles
+import "./index.css";                            // Your styles (optional)
+```
+
+###### 3. Using it 
+
+This is example how you should use Bootstrap in your project.
+
+```javascript
+import React from "react";
+
+const App = () => {
+  return (
+    <div className="container mt-5 text-center">
+      <h1 className="text-primary">🚀 Bootstrap is working!</h1>
+      <button className="btn btn-success mt-3">Click Me</button>
+    </div>
+  );
+};
+
+export default App;
+```
+
+##### 4. (Optional) Using Prebuild components
+
+If you need Bootstrap components like modals, dropdowns, or tooltips, install JS dependencies (Add Bootstrap JS + Popper.js) :
+
+```bash
+npm install bootstrap @popperjs/core
+```
+Then import Bootstrap JS (after React is loaded) in the `index.jsx` or `main.jsx`:
+```javascript
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+```
+This includes both Bootstrap JS and Popper.js in one file.
 
 
 ## Download File
